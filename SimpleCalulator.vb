@@ -1,4 +1,11 @@
-﻿Module SimpleCalulator
+﻿
+'Sean Gingerich
+'RCET0265
+'Fall 2020
+'Simple Calculator
+'https://github.com/gingsean5/SimpleCalculator
+
+Module SimpleCalulator
 
     Sub Main()
         Dim userInput1 As String
