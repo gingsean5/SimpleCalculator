@@ -5,18 +5,23 @@
 'Simple Calculator
 'https://github.com/gingsean5/SimpleCalculator
 
+Option Strict On
+Option Explicit On
+
 Module SimpleCalulator
 
     Sub Main()
         Dim userInput1 As String
         Dim userInput2 As String
-        Dim userDecision As String
+        Dim userDecision As Integer
         Dim firstNumber As Integer
         Dim secondNumber As Integer
         Dim problem1 As Boolean = False
         Dim problem2 As Boolean = False
+        Dim problem3 As Boolean = True
         Dim userSum As Integer
         Dim userProduct As Integer
+        Dim userString As String
 
         Console.WriteLine("Enter the first number.")
         Try
@@ -46,7 +51,18 @@ Module SimpleCalulator
                 Console.WriteLine("Press 1 to add, or 2 to multiply")
                 userSum = firstNumber + secondNumber
                 userProduct = firstNumber * secondNumber
-                userDecision = Console.ReadLine()
+
+
+                While problem3 = True
+                    Try
+                        userString = Console.ReadLine()
+                        userDecision = CInt(userString)
+                        problem3 = False
+                    Catch
+                        problem3 = True
+                    End Try
+                End While
+
                 If userDecision = 1 Then
                     Console.WriteLine($"{userSum}")
                 ElseIf userDecision = 2 Then
